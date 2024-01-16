@@ -1,26 +1,32 @@
-import { SplitScreen } from "./components/LayoutPattern/split-screen";
+// import { SplitScreen } from "./components/LayoutPattern/split-screen";
 
-const LeftSideComponent = ({title}) => {
-  return (
-    <h2 style = {{backgroundColor: "crimson"}}>
-      {title}
-    </h2>
-  )
-}
+import { LargeAuthorListItem } from "./components/LayoutPattern/Authors/LargeListItems";
+import { SmallAuthorListItem } from "./components/LayoutPattern/Authors/SmallListItems";
+import { RegularList } from "./components/LayoutPattern/Lists/Regular";
+import { authors } from "./data/authors";
 
-const RightSideComponent = ({title}) => {
-  return (
-    <h2 style = {{backgroundColor: "brown"}}>
-      {title}
-    </h2>
-  )
-}
+// const LeftSideComponent = ({title}) => {
+//   return (
+//     <h2 style = {{backgroundColor: "crimson"}}>
+//       {title}
+//     </h2>
+//   )
+// }
+
+// const RightSideComponent = ({title}) => {
+//   return (
+//     <h2 style = {{backgroundColor: "brown"}}>
+//       {title}
+//     </h2>
+//   )
+// }
 function App() {
-  return (<SplitScreen leftWidth={1} rightWidth={3}>
-      <LeftSideComponent title = {"Left"}/>
-      <RightSideComponent title = {"Right"}/>
-    </SplitScreen>
-  );
+  return (
+    <>
+      <RegularList items={authors} sourceName={"author"} ItemComponent={SmallAuthorListItem}/>
+      <RegularList items={authors} sourceName={"author"} ItemComponent={LargeAuthorListItem}/>
+    </>
+  )
 }
 
 export default App;
