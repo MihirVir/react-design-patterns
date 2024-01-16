@@ -1,4 +1,5 @@
 export const LargeBookListItem = ({book}) => {
+    console.log(book)
     const { name, price, title, pages } = book;
     return (
         <>
