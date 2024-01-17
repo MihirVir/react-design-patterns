@@ -15,6 +15,10 @@ import { UserLoader } from "./components/ContainerComponents/user-loader";
 import { ResourceLoader } from "./components/ContainerComponents/resource-loader";
 import { BookInfo } from "./components/ContainerComponents/book-info";
 import { DataSource } from "./components/ContainerComponents/data-source";
+import { DataSourceRenderProps } from "./components/ContainerComponents/data-source-render-props";
+const Message = ({ msg }) => {
+  return <h1>{msg}</h1>
+}
 // const LeftSideComponent = ({title}) => {
 //   return (
 //     <h2 style = {{backgroundColor: "crimson"}}>
@@ -45,6 +49,10 @@ const getDataFromServer = async (url) => {
   const response = await axios.get(url)
   return response.data;
 }
+
+const getDataFromLocalStorage =  (key) => {
+  return localStorage.getItem(key);
+}
 function App() {
   /*
   The ResourceLoader is more flexible than any other component loader we build rn 
@@ -58,8 +66,10 @@ function App() {
  </ResourceLoader> */}
   return (
     <>
-      <DataSource getData={() => getDataFromServer("http://localhost:9090/user/2")} resourceName={"user"}>
-        <UserInfo />
+      <DataSourceRenderProps getData={() => getDataFromServer("http://localhost:9090/user/2")} render = {(resource) => <UserInfo user = {resource}/>}>
+      </DataSourceRenderProps>
+      <DataSource getData={() => getDataFromLocalStorage("token")} resourceName={"msg"}>
+        <Message />
       </DataSource>
     </>
   )
