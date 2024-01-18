@@ -23,7 +23,7 @@ const ModalContent = styled.div`
  * This modal is uncontrolled because the outside components can't access its features directly 
  */
 
-export const ControlledModal = ({ children }) => {
+export const UncontrolledModal = ({ children }) => {
     const [show, setShow] = useState(false);
     return (
         <>
