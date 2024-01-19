@@ -5,10 +5,11 @@ import './index.css'
 import { UncontrolledApp } from './UncontrolledApp.jsx'
 import { ControlledModalApp } from './ControlledModalApp.jsx'
 import { UncontrolledFlowApp } from './UntrolledFlowApp.jsx'
+import { ControlledFlowApp } from './ControlledFlowApp.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <UncontrolledFlowApp />
+    <ControlledFlowApp />
   </React.StrictMode>,
 )
