@@ -1,6 +1,9 @@
-import { useCurrentUser } from "./current-user.hook.jsx";
-export const CustomUserInfo = () => {
-  const user = useCurrentUser();
+// import { useCurrentUser } from "./current-user.hook.jsx";
+// import { useUser } from "./user.hook.jsx";
+import { useResource } from "./resource.hook.jsx";
+
+export const CustomUserInfo = ({ userId }) => {
+  const user = useResource(`http://localhost:9090/user/${userId}`);
   const { name, age, country, books } = user || {};
 
   return user ? (

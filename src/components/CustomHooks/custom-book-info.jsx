@@ -1,6 +1,10 @@
-export const CustomBookInfo = ({ book }) => {
+import { useResource } from "./resource.hook.jsx";
+
+export const CustomBookInfo = ({ bookId }) => {
+  const book = useResource(`http://localhost:9090/books/${bookId}`);
+
   const { name, price, title, pages } = book || {};
-  
+    
   return book ? (
     <>
       <h3>{name}</h3>
