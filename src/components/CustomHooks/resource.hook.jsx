@@ -14,7 +14,7 @@ export const useResource = (resourceURL) => {
       const response = await axios.get(resourceURL);
       setResource(response.data);
     })();
-  }, []);
+  }, [resourceURL]);
 
   return resource;
 };
