@@ -66,7 +66,8 @@ function App() {
  </ResourceLoader> */}
   return (
     <>
-      <DataSourceRenderProps getData={() => getDataFromServer("http://localhost:9090/user/2")} render = {(resource) => <UserInfo user = {resource}/>}>
+      <DataSourceRenderProps getData={() => getDataFromServer("http://localhost:9090/user/2")} 
+        render = {(resource) => <UserInfo user = {resource}/>}>
       </DataSourceRenderProps>
       <DataSource getData={() => getDataFromLocalStorage("token")} resourceName={"msg"}>
         <Message />

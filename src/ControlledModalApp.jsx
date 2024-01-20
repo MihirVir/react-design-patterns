@@ -9,7 +9,9 @@ export const ControlledModalApp = () => {
                 <h4>Hello World</h4>
             </ControlledModal>
 
-            <button onClick = {() => setShouldDisplay(!shouldDisplay)} >{ shouldDisplay ? "Hide Modal" : "Display Modal"}</button>
+            <button onClick = {() => setShouldDisplay(!shouldDisplay)} >
+              { shouldDisplay ? "Hide Modal" : "Display Modal"}
+            </button>
 
         </>
     )
