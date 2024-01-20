@@ -1,0 +1,42 @@
+/*
+ * Composition Components basically is somehow 
+ * the inhertiance pattern in programming world
+ *
+ * But it's slightly different.
+ *
+*/
+
+
+export const Button = ({ size, color, text, ...props }) => {
+  return (
+    <>
+      <button style = {{
+        fontSize: size === 'small' ? '8px' : '32px',
+        backgroundColor: color
+      }}>
+        {text}
+      </button>
+    </>
+  );
+};
+
+export const RedButton = props => {
+  return (
+    <>
+      <Button {...props} color = {"crimson"} />
+    </>
+  );
+};
+
+export const GreenSmallButton = props => {
+  return (
+    <>
+      <Button {...props} color = {"green"} size = {"small"} />
+    </>
+  );
+};
+
+/*
+  Partial Components are a part of the Component 
+  rather than the entire component
+ */

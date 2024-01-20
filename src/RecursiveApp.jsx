@@ -1,4 +1,6 @@
 import { RecursiveComponent } from "./components/RecursiveComponents/recursive.jsx"
+import { RedButton, GreenSmallButton } from "./components/compositions/compositions.jsx";
+import { LargeRedButton } from "./components/compositions/partial.jsx";
 
 const nestedObject = {
   key: "val1",
@@ -20,6 +22,9 @@ export const RecursiveApp = () =>  {
       <ul>
         <RecursiveComponent data = {nestedObject} />
       </ul>
+      <RedButton text = "I'm Red" />
+      <GreenSmallButton text = "I am green and small" />
+      <LargeRedButton text = "Im a Large Red Button"/>
     </>
   )
 };
