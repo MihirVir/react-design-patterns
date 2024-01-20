@@ -7,10 +7,12 @@ import { ControlledModalApp } from './ControlledModalApp.jsx'
 import { UncontrolledFlowApp } from './UntrolledFlowApp.jsx'
 import { ControlledFlowApp } from './ControlledFlowApp.jsx'
 import { HOCApp } from './HOCApp.jsx'
+import CustomHooksApp from "./CustomHooksApp.jsx";
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <HOCApp />
+    <CustomHooksApp />
   </React.StrictMode>,
 )
