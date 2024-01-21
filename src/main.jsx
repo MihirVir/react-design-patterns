@@ -9,10 +9,12 @@ import { ControlledFlowApp } from './ControlledFlowApp.jsx'
 import { HOCApp } from './HOCApp.jsx'
 import CustomHooksApp from "./CustomHooksApp.jsx";
 import { RecursiveApp } from "./RecursiveApp.jsx";
+import CompoundApp from "./CompoundApp.jsx";
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <RecursiveApp />
+    <CompoundApp />
   </React.StrictMode>,
 )
